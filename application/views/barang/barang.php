@@ -31,11 +31,20 @@
                   <tr>
                     <td><?= $list['kode_barang'] ?></td>
                     <td><?= $list['nama_barang'] ?></td>
-                    <td></td>
+                    <td><?= $list['tgl_trans_terakhir'] ?></td>
                     <td><?= $list['stock_awal'] ?></td>
                     <td><?= $list['stock_akhir'] ?></td>
-                    <td><?= $list['harga_terakhir'] ?></td>
-                    <td><?= $list['jml_stock_idr'] ?></td>
+                    <td><?= $list['harga_satuan_terakhir'] ?></td>
+                    <td>
+                      <?php
+                      if ($list['harga_satuan_terakhir']) {
+                        $stockIDR = $list['harga_satuan_terakhir'] * $list['stock_akhir'];
+                        echo $stockIDR;
+                      } else {
+                        echo $list['harga_satuan_terakhir'];
+                      }
+                      ?>
+                    </td>
                     <td>
                       <div style="text-align:center; margin:-2.5px">
                         <a href="<?= base_url('riwayat_transaksi_barang/') . $list['id_barang'] ?>" title="Preview">
@@ -57,21 +66,6 @@
 </section>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<!-- <script type="text/javascript">
-  $(document).ready(function() {
-    $('#list_barang').DataTable({
-      "processing": true,
-      "serverSide": true,
-      "autoWidth": false,
-
-      "ajax": {
-        "url": "<?php echo site_url('barang/get_list') ?>",
-        "type": "POST"
-      },
-    });
-  });
-</script> -->
 
 <script type="text/javascript">
   <?php if ($this->session->flashdata('success')) { ?>

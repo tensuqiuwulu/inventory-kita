@@ -56,7 +56,9 @@ $route['authentication'] = 'Auth/authentication';
 $route['barang'] = 'barang';
 $route['input_barang'] = 'barang/FormInputBarang';
 $route['add_barang'] = 'barang/AddBarang';
-$route['riwayat_transaksi_barang/:any'] = 'barang/RiwayatTransaksiBarang';
+
+//Riwayat Barang
+$route['riwayat_transaksi_barang/:any'] = 'RiwayatBarang';
 
 //Distribusi
 $route['input_distribusi/:any'] = 'distribusi/index';
@@ -81,12 +83,12 @@ $route['update_vendor'] = 'vendor/UpdateVendor';
 $route['delete_vendor/:any'] = 'Vendor/DeleteVendor';
 
 //Pembelian
-$route['list_nota'] = 'nota';
-$route['form_input_barang'] = 'nota/form_input';
-$route['create_pembelian/:any'] = 'nota/form_input_barang';
+$route['input_pembelian/:any'] = 'PembelianBarang';
+$route['verifikasi_cart'] = 'PembelianBarang/VerifikasiCart';
 
-//nota
-$route['create_nota'] = 'nota/create_nota';
+//Nota
+$route['list_nota'] = 'nota';
+$route['add_nota'] = 'nota/AddNota';
 
 //Permintaaan
 $route['list_permintaan_barang'] = 'permintaan';

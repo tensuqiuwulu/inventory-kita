@@ -112,10 +112,10 @@
               </a>
             </li>
             <li class="nav-item has-treeview">
-              <a href="<?= base_url('barang/cabang') ?>" class="nav-link <?php if ($page == 'cabang') echo "active"; ?>">
-                <i class="nav-icon fas fa-box"></i>
+              <a href="<?= base_url('') ?>" class="nav-link <?php if ($page == 'my_stock') echo "active"; ?>">
+                <i class="nav-icon fas fa-archive"></i>
                 <p>
-                  Barang Cabang
+                  My Stock
                 </p>
               </a>
             </li>

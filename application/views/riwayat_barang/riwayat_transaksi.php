@@ -71,16 +71,17 @@
                     </td>
                     <td><?= $list['total'] ?></td>
                     <td>
-						<?php 
-							if($list['stock_masuk']){
-								$hargaTotal = $list['harga_satuan'] * $list['stock_masuk'];
-							}else if($list['stock_keluar']){
-								$hargaTotal = $list['harga_satuan'] * $list['stock_keluar'];
-							}
-							
-							echo $hargaTotal;
-						?>
-					</td>
+                      <?php
+                      $hargaTotal = 0;
+                      if ($list['stock_masuk']) {
+                        $hargaTotal = $list['harga_satuan'] * $list['stock_masuk'];
+                      } else if ($list['stock_keluar']) {
+                        $hargaTotal = $list['harga_satuan'] * $list['stock_keluar'];
+                      }
+
+                      echo $hargaTotal;
+                      ?>
+                    </td>
                   </tr>
                 <?php endforeach ?>
               </tbody>

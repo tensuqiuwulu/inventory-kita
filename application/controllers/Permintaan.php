@@ -35,7 +35,8 @@ class Permintaan extends CI_Controller
       'id_barang' => $this->input->post('id_barang'),
       'stock_permintaan' => $this->input->post('stock_permintaan'),
       'tgl_permintaan' => date('Y-m-d', time()),
-      'divisi_peminta' => 'FL Teller',
+      'divisi_peminta' => $divisi,
+      'status_permintaan' => 0
     );
 
     $cek = $this->PermintaanModel->insert($data);

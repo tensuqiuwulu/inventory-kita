@@ -14,7 +14,7 @@ $(document).ready(function () {
     console.log(no_nota)
     $.ajax({
       type: 'ajax',
-      url: base_url + "nota/get_list_barang/" + no_nota,
+      url: base_url + "PembelianBarang/GetListBarangAjax/" + no_nota,
       dataType: 'json',
       success: function (data) {
         console.log(data);
@@ -23,17 +23,23 @@ $(document).ready(function () {
         var no = 1;
         var total_harga = 0;
         var total_keseluruhan_harga = 0;
+        var checked = '';
         for (i = 0; i < data.length; i++) {
           total_harga = Number(data[i].qty) * Number(data[i].harga_satuan);
           total_keseluruhan_harga = total_keseluruhan_harga + total_harga;
-          html += '<tr>' +
+          if (data[i].status_verifikasi == 1) {
+            checked = 'disabled'
+          }
+          html +=
+            '<tr>' +
             '<td>' + no++ + '</td>' +
-            '<td style="text-align: center"><input type="checkbox" name="cek"> </td>' +
+            '<td style="text-align: center"><input type="checkbox" id="check" name="check" value="' + data[i].kode_pembelian + '" ' + checked + '/></td>' +
             '<td>' + data[i].nama_barang + '</td>' +
             '<td>' + data[i].nama_vendor + '</td>' +
             '<td>' + data[i].qty + '</td>' +
             '<td style="text-align: right">Rp. ' + data[i].harga_satuan + '</td>' +
             '<td style="text-align: right">Rp. ' + total_harga + '</td>' +
+            '<td style="text-align: right">' + data[i].status_verifikasi + '</td>' +
             '<td><div style="text-align: center; margin:-2.5px">' +
             '<button id="delete_cart" name="delete_cart" class="btn btn-danger btn-sm" data - id="' + data[i].kode_pembelian + '" > Delete</button > ' +
             '</div>' +
@@ -46,13 +52,40 @@ $(document).ready(function () {
     });
   }
 
+  $("#verifikasi").click(function (e) {
+    var data = [];
+    $.each($("input[name='check']:checked"), function () {
+      data.push($(this).val());
+    });
+
+    // data = data.toString(); // toString function convert array to string
+
+    $.ajax({
+      url: base_url + "PembelianBarang/VerifikasiCart",
+      type: "POST",
+      cache: false,
+      data: { kode_pembelian: data },
+      success: function (result) {
+        console.log(result);
+        if (result) {
+          alert(result);
+        } else {
+          $('.toastrDefaultSuccess').ready(function () {
+            toastr.success('success', 'Data Barang Berhasil Di Verifikasi');
+          });
+          listBarang();
+        }
+      }
+    });
+  });
+
   //Menambah Barang
   $('#add_cart').click(function () {
     var data = $('#cart_form').serialize();
     console.log(data);
     $.ajax({
       type: "POST",
-      url: base_url + "nota/add_barang",
+      url: base_url + "PembelianBarang/AddCart",
       dataType: "JSON",
       data: data,
       success: function (data) {

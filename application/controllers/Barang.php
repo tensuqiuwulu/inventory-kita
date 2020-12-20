@@ -10,9 +10,7 @@ class Barang extends CI_Controller
     date_default_timezone_set('Asia/Singapore');
     parent::__construct();
     $this->load->model('BarangModel');
-    $this->load->model('VendorModel');
     $this->load->model('KategoriModel');
-    $this->load->model('PembelianModel');
     $this->load->model('RiwayatModel');
   }
 
@@ -21,16 +19,6 @@ class Barang extends CI_Controller
     $data['page'] = $this->page;
     $data['barang'] = $this->BarangModel->GetBarang()->result_array();
     $this->template->load('template', 'barang/barang', $data);
-  }
-
-  public function RiwayatTransaksiBarang()
-  {
-    $idBarang = $this->uri->segment(2);
-    $data['page'] = $this->page;
-    $data['riwayat'] = $this->RiwayatModel->GetRiwayatPerBarang($id = ['id_barang' => $idBarang]);
-    //$data['detailBarang'] = $this->BarangModel->GetBarang($id = ['kode_barang' => $kodeBarang]);
-    //$data['pembelian'] = $this->PembelianModel->get_list_by_barang($this->uri->segment(3));
-    $this->template->load('template', 'barang/riwayat_transaksi', $data);
   }
 
   //untuk select2 ajax
@@ -52,6 +40,7 @@ class Barang extends CI_Controller
     $kodeKategori = $this->input->post('kode_kategori');
     $cekKodeBarang = $this->BarangModel->CekKodeBarang($kodeKategori);
 
+    //Mengecek kode barang yang sudah ada di database
     if ($cekKodeBarang == null) {
       $kodeBarang = $kodeKategori . '001';
     } else {
@@ -84,7 +73,7 @@ class Barang extends CI_Controller
         'tgl_riwayat' => $current_time
       );
 
-      $cekInsert = $this->RiwayatModel->AddRiwayat($dataRiwayat);
+      $cekInsert = $this->RiwayatModel->insert($dataRiwayat);
 
       if ($cekInsert) {
         $this->session->set_flashdata('success', 'Data barang berhasil ditambahkan');

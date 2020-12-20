@@ -32,13 +32,12 @@ class Auth extends CI_Controller
 						'divisi' => $dataUser->divisi
 					);
 
+					$this->session->set_userdata($data);
 					$this->session->set_flashdata(
 						'success',
 						'Berhasil login'
 					);
 					redirect('dashboard');
-
-					$this->session->set_userdata($data);
 				} else {
 					$this->session->set_flashdata(
 						'error',

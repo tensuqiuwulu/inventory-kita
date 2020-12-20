@@ -64,6 +64,7 @@
                     <td>Qty</td>
                     <td>Harga Satuan</td>
                     <td>Total Harga</td>
+                    <td>Verifikasi</td>
                     <td>Opsi</td>
                   </tr>
                 </thead>
@@ -72,12 +73,12 @@
                 </tbody>
 
               </table>
+              <div class="form-group" style="float: left;">
+                <button id="verifikasi" class="btn btn-md btn-success"><i class="fa fa-check-square"></i> Verifikasi</button>
+              </div>
               <div class="form-group" style="float: right;">
                 <label for="" style="text-align: center; font-weight:normal; float:right">Total Harga Keseluruhan</label>
                 <input style="text-align: right;" id="total_harga" type="text" placeholder="Total Harga" class="form-control" readonly>
-              </div>
-              <div class="form-group" style="float: left;">
-                <button name="confirm" class="btn btn-md btn-success"><i class="fa fa-check-square"></i> Verifikasi</button>
               </div>
             </div>
           </div>
@@ -137,13 +138,13 @@
 <script type="text/javascript" src="<?= base_url('assets/js/nota.js') ?>"></script>
 
 <script type="text/javascript">
-  <?php if ($this->session->flashdata('success')) { ?>
-    $('.toastrDefaultSuccess').ready(function() {
-      toastr.success('<?php echo $this->session->flashdata('success'); ?>')
-    });
-  <?php } else if ($this->session->flashdata('error')) {  ?>
-    $('.toastrDefaultError').ready(function() {
-      toastr.error('<?php echo $this->session->flashdata('error'); ?>')
-    });
-  <?php } ?>
+  // <?php if ($this->session->flashdata('success')) { ?>
+  //   $('.toastrDefaultSuccess').ready(function() {
+  //     toastr.success('<?php echo $this->session->flashdata('success'); ?>')
+  //   });
+  // <?php } else if ($this->session->flashdata('error')) {  ?>
+  //   $('.toastrDefaultError').ready(function() {
+  //     toastr.error('<?php echo $this->session->flashdata('error'); ?>')
+  //   });
+  // <?php } ?>
 </script>

@@ -126,18 +126,6 @@
   });
 </script>
 
-<!-- <script type="text/javascript">
-  $(document).ready(function() {
-    $("#total_qty, #harga_satuan").keyup(function() {
-      var harga_satuan = $("#harga_satuan").val();
-      var total_qty = $("#total_qty").val();
-
-      var total = parseInt(harga_satuan) * parseInt(total_qty);
-      $("#total_harga").val(total);
-    });
-  });
-</script> -->
-
 <script type="text/javascript">
   $(document).ready(function() {
     $('#id_kategori').change(function() {
@@ -151,7 +139,6 @@
         success: function(data) {
           var html = '';
           var kode_kategori = data.kode_kategori;
-          //console.log(data.kategori.kode_kategori);
           $('#kode_kategori').val(kode_kategori);
         }
       });

@@ -8,7 +8,7 @@
             <h3 class="card-title">List Nota Pembelian</h3>
           </div>
           <div style="margin: 10px 10px -10px 20px">
-            <?php echo form_open('list_pembelian') ?>
+            <?php echo form_open('list_nota') ?>
             <div class="form-group">
               <div class="row">
                 <div class="col-md-2">
@@ -53,7 +53,7 @@
                     </td>
                     <td>
                       <div style="text-align:center; margin:-2.5px">
-                        <a href="<?= base_url('create_pembelian/' . $list['no_nota']) ?>">
+                        <a href="<?= base_url('input_pembelian/' . $list['no_nota']) ?>">
                           <button style="height: 24px;" type="button" class="btn btn-danger btn-xs">
                             <i style="font-size: 12px;">Tambah / Verifikasi</i>
                           </button>
@@ -81,7 +81,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <?php echo form_open('create_nota', 'id="validasi_create_nota"') ?>
+        <?php echo form_open('add_nota', 'id="validasi_add_nota"') ?>
         <div class="form-group">
           <div class="row">
             <div class="col-md-6">
@@ -132,7 +132,7 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
-    $('#validasi_create_nota').validate({
+    $('#validasi_add_nota').validate({
       rules: {
         tgl_pembelian: {
           required: true,
