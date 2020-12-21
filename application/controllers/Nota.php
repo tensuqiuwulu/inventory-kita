@@ -31,7 +31,7 @@ class Nota extends CI_Controller
 
     $data['nota'] = $this->NotaModel->get_list($awal, $akhir)->result_array();
     $data['page'] = $this->page;
-    $this->template->load('template', 'nota/list_nota', $data);
+    $this->template->load('template', 'nota/nota', $data);
   }
 
   public function AddNota()

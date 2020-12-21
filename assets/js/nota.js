@@ -123,7 +123,7 @@ $(document).ready(function () {
       id_vendor: {
         required: true
       },
-      kode_barang: {
+      id_barang: {
         required: true
       },
       qty: {
@@ -137,7 +137,7 @@ $(document).ready(function () {
       id_vendor: {
         required: "Vendor tidak boleh kosong",
       },
-      kode_barang: {
+      id_barang: {
         required: "Barang tidak boleh kosong",
       },
       qty: {

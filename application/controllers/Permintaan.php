@@ -18,7 +18,7 @@ class Permintaan extends CI_Controller
   {
     $data['page'] = $this->page;
     $data['permintaan'] = $this->PermintaanModel->GetPermintaan()->result_array();
-    $this->template->load('template', 'Permintaan/list_permintaan', $data);
+    $this->template->load('template', 'Permintaan/permintaan', $data);
   }
 
   public function InputPermintaan()
@@ -54,6 +54,7 @@ class Permintaan extends CI_Controller
   {
     $data['page'] = $this->page;
     $data['permintaan'] = $this->PermintaanModel->GetPermintaan($this->uri->segment(2))->row();
+    $data['stockBarang'] = $this->BarangModel->GetBarang($this->uri->segment(3))->row();
     $this->template->load('template', 'permintaan/detail', $data);
   }
 

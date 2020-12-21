@@ -9,7 +9,7 @@
           </div>
           <div style="margin: 10px 10px -10px 20px">
             <a href="<?= base_url('input_barang') ?>">
-              <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-pencil-alt"></i> Tambah</button>
+              <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-pencil-alt"></i> Tambah Barang</button>
             </a>
           </div>
           <div class="card-body">

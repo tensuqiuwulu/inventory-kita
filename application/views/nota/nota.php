@@ -3,9 +3,9 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-12">
-        <div class="card card-red" style="margin: 10px 10px 0px 10px;">
+        <div class="card card-success" style="margin: 10px 10px 0px 10px;">
           <div class="card-header">
-            <h3 class="card-title">List Nota Pembelian</h3>
+            <h3 class="card-title">Data Nota Pembelian</h3>
           </div>
           <div style="margin: 10px 10px -10px 20px">
             <?php echo form_open('list_nota') ?>
@@ -22,7 +22,7 @@
                 </div>
               </div>
             </div>
-            <button style="margin-top: -10px" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#add-nota"><i class="fa fa-pencil-alt"></i> Tambah Nota</button>
+            <button style="margin-top: -10px" type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#add-nota"><i class="fa fa-pencil-alt"></i> Tambah Nota</button>
             <?php echo form_close() ?>
           </div>
           <div class="card-body">

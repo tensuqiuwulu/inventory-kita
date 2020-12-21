@@ -10,7 +10,7 @@ class BarangModel extends CI_Model
     $this->db->select('*')
       ->from('barang');
     if ($id != NULL) {
-      $this->db->where('barang.id_barang', $id);
+      $this->db->where('id_barang', $id);
     }
     return $this->db->get();
   }

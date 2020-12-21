@@ -6,7 +6,7 @@ class Auth extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('AuthModel');
+		$this->load->model('UsersModel');
 	}
 
 	public function index()
@@ -16,7 +16,7 @@ class Auth extends CI_Controller
 
 	public function authentication()
 	{
-		$dataUser = $this->AuthModel->GetUserByUsername($username = ['username' => $this->input->post('username')]);
+		$dataUser = $this->UsersModel->GetUserByUsername($username = ['username' => $this->input->post('username')]);
 		$password = $this->input->post('password');
 		$encrypt = md5($password);
 
@@ -37,7 +37,7 @@ class Auth extends CI_Controller
 						'success',
 						'Berhasil login'
 					);
-					redirect('dashboard');
+					redirect('barang');
 				} else {
 					$this->session->set_flashdata(
 						'error',

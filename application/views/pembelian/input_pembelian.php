@@ -34,7 +34,7 @@
                 <div class="row">
                   <div class="col-md-4">
                     <label style="font-weight: normal;" for="nama_barang">Nama Barang</label>
-                    <select type="text" name="id_barang" id="id_barang" class="form-control form-control-sm barang"></select>
+                    <select name="id_barang" id="id_barang" class="form-control form-control-sm barang"></select>
                   </div>
                   <div class="col-md-4">
                     <label style="font-weight: normal;" for="qty">Qty</label>

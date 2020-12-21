@@ -6,7 +6,7 @@
         <div style="margin: 10px">
           <button type="button" onclick="goBack()" class="btn btn-danger"><i class="fa fa-arrow-alt-circle-left"></i> Kembali</button>
         </div>
-        <div class="card card-red" style="margin: 10px 10px 0px 10px;">
+        <div class="card card-success" style="margin: 10px 10px 0px 10px;">
           <div class="card-header">
             <h3 class="card-title">Riwayat Transaksi</h3>
           </div>

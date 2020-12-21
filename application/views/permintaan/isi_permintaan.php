@@ -87,12 +87,19 @@
             <tr>
               <td>Nama Barang</td>
               <td>:</td>
-              <td>Buku Tabungan</td>
+              <td><?= $stockBarang->nama_barang ?></td>
             </tr>
             <tr>
               <td>Stock Saat Ini</td>
               <td>:</td>
-              <td>40</td>
+              <td>
+                <?php
+                if ($stockBarang->stock_akhir == null) {
+                  echo $stockBarang->stock_awal;
+                } else {
+                  echo $stockBarang->stock_akhir;
+                } ?>
+              </td>
             </tr>
 
           </table>

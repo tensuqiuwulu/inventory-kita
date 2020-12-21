@@ -17,6 +17,6 @@ class RiwayatBarang extends CI_Controller
     $idBarang = $this->uri->segment(2);
     $data['page'] = $this->page;
     $data['riwayat'] = $this->RiwayatModel->GetRiwayatPerBarang($id = ['id_barang' => $idBarang]);
-    $this->template->load('template', 'riwayat_barang/riwayat_transaksi', $data);
+    $this->template->load('template', 'riwayat/riwayat_barang', $data);
   }
 }

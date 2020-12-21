@@ -16,7 +16,7 @@ class Kategori extends CI_Controller
   {
     $data['page'] = $this->page;
     $data['kategori'] = $this->KategoriModel->GetKategori()->result_array();
-    $this->template->load('template', 'kategori/list_kategori', $data);
+    $this->template->load('template', 'kategori/kategori', $data);
   }
 
   public function FormInputKategori()

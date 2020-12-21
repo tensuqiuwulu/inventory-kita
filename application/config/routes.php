@@ -52,6 +52,20 @@ defined('BASEPATH') or exit('No direct script access allowed');
 //Auth
 $route['authentication'] = 'Auth/authentication';
 
+//Users
+$route['users'] = 'users';
+$route['input_user'] = 'users/FormInputUser';
+$route['edit_user/:any'] = 'users/FormEditUser';
+$route['add_user'] = 'users/AddUser';
+$route['update_user'] = 'users/UpdateUser';
+
+//Divisi
+$route['divisi'] = 'divisi';
+$route['input_divisi'] = 'divisi/FormInputDivisi';
+$route['edit_divisi'] = 'divisi/FormEditDivisi';
+$route['add_divisi'] = 'divisi/AddDivisi';
+$route['edit_divisi/:any'] = 'divisi/EditDivisi';
+
 //Barang
 $route['barang'] = 'barang';
 $route['input_barang'] = 'barang/FormInputBarang';

@@ -3,13 +3,13 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-12">
-        <div class="card card-red" style="margin: 10px 10px 0px 10px;">
+        <div class="card card-success" style="margin: 10px 10px 0px 10px;">
           <div class="card-header">
-            <h3 class="card-title">List Kategori</h3>
+            <h3 class="card-title">Data Kategori</h3>
           </div>
           <div style="margin: 10px 10px -10px 20px">
             <a href="<?= base_url('input_kategori') ?>">
-              <button type="button" class="btn btn-success btn-sm"><i class="fa fa-pencil-alt"></i> Tambah</button>
+              <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-pencil-alt"></i> Tambah Kategori</button>
             </a>
           </div>
           <div class="card-body">
